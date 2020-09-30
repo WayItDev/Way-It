@@ -1,0 +1,44 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "pretty": "prettier --write **/*.{js,json} !node_modules/**",
+    "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/drawer": "^5.9.2",
+    "@react-navigation/native": "^5.7.5",
+    "dotenv": "8.2.0",
+    "expo": "~39.0.3",
+    "expo-status-bar": "~1.0.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.0.tar.gz",
+    "react-native-gesture-handler": "~1.7.0",
+    "react-native-maps": "0.27.1",
+    "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "~3.1.4",
+    "react-native-screens": "~2.10.1",
+    "react-native-web": "~0.13.7"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.9.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "26.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-react": "^7.21.0",
+    "eslint-plugin-react-native": "^3.9.1",
+    "jest": "26.4.2",
+    "jest-expo": "^39.0.0",
+    "prettier": "^2.1.2",
+    "react-test-renderer": "^16.13.1"
+  },
+  "private": true
+}
