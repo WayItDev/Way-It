@@ -2,8 +2,6 @@ import React from 'react';
 import { StyleSheet, View, TextInput, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-
-
 export default class SignInScreen extends React.Component {
   render(){
 
@@ -38,9 +36,6 @@ export default class SignInScreen extends React.Component {
          <TouchableOpacity>
           <Text style= {styles.forgot}> Forgot Password? </Text>
          </TouchableOpacity> 
-
-       
-
 
       </View>
     );
@@ -77,13 +72,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     color: "white",
     marginTop:-50
-  }, 
-
-  logo:{
-    fontWeight:"bold",
-    fontSize:50,
-    color:"#fb5b5a",
-    marginBottom:40
   }, 
 
   forgot:{
