@@ -19,7 +19,7 @@ export default class SignInScreen extends React.Component {
             </TouchableOpacity>
 
             <TouchableOpacity>
-            <Text style={styles.loginBtn}>Login</Text>
+            <Text style={styles.loginBtn}>Log In</Text>
             </TouchableOpacity>
         </View>
 
@@ -35,6 +35,10 @@ export default class SignInScreen extends React.Component {
           placeholder="Password..." 
           placeholderTextColor="#003f5c"
           onChangeText={text => this.setState({password:text})}/>
+
+            <TouchableOpacity>
+            <Text style={styles.ContBtn}>Continue</Text>
+            </TouchableOpacity>
 
          <TouchableOpacity>
           <Text style= {styles.forgot}> Forgot Password? </Text>
@@ -90,7 +94,7 @@ const styles = StyleSheet.create({
 
   loginBtn:{
     width:"80%",
-    backgroundColor:"#fb5b5a",
+    backgroundColor:"#665eff",
     borderRadius:15,
     height:50,
     width:60,
@@ -98,20 +102,34 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     marginTop:80,
     marginBottom:10,
-    marginRight:35
+    marginRight:35,
+    color: '#F1F1F1', 
   },
   
   SignInBtn:{
     width:"80%",
-    backgroundColor:"#fb5b5a",
+    backgroundColor:'#665eff',
     borderRadius:15,
     height:50,
     width:60,
     alignItems:"center",
     justifyContent:"center",
     marginTop:80,
-    marginBottom:10
-  
+    marginBottom:10,
+    color: '#F1F1F1',
+  },
+
+  ContBtn:{
+    width:"80%",
+    backgroundColor:'#665eff',
+    borderRadius:15,
+    height:50,
+    width:350,
+    alignItems:"center",
+    justifyContent:"center",
+    marginTop:80,
+    marginBottom:10,
+    color: '#F1F1F1',
   },
 
 });
