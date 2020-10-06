@@ -13,19 +13,22 @@ export default class SignInScreen extends React.Component {
     return (
       <View style= {styles.inputView}>
         
-        <TouchableOpacity>
-        <Text style={styles.SignUpBtn}>Signup</Text>
-        </TouchableOpacity>
+        <View style= {styles.containerLogin}>
+            <TouchableOpacity>
+            <Text style={styles.SignInBtn}>SignUp</Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity>
-        <Text style={styles.loginBtn}>Login</Text>
-        </TouchableOpacity>
+            <TouchableOpacity>
+            <Text style={styles.loginBtn}>Login</Text>
+            </TouchableOpacity>
+        </View>
 
+         
         <TextInput    // email placeholder
-         style={styles.inputEmail}
-         placeholder="Email..." 
-         placeholderTextColor="#003f5c"
-         onChangeText={text => this.setState({email:text})}/>
+        style={styles.inputEmail}
+        placeholder="Email..." 
+        placeholderTextColor="#003f5c"
+        onChangeText={text => this.setState({email:text})}/>
           
           <TextInput    // ww placeholder
           style={styles.inputPassword}
@@ -44,26 +47,31 @@ export default class SignInScreen extends React.Component {
 
 const styles = StyleSheet.create({
 
-  container: {
-    flex: 1,
-    backgroundColor: '#003f5c',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
+ 
   inputView: {
+    backgroundColor:"#f1f3f4",  
     flex:1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:"#9ab3f5",    
+    justifyContent: 'center',  
+    maxHeight: '90%',
+    
   },
+
+   containerLogin: {
+    flexDirection: 'row-reverse',
+    justifyContent: 'space-between',
+    paddingVertical: 5,
+
+   }, 
 
   inputEmail: {
     flex:1, 
     justifyContent: 'center',
     alignItems: 'center',
-    color: "white",
-    marginTop:50
+    marginTop:50,
+    borderRadius: 50,
+    borderBottomColor: '#3282b8',
+    textShadowColor: '#4d80e4', 
   }, 
 
   inputPassword: {
@@ -89,10 +97,11 @@ const styles = StyleSheet.create({
     alignItems:"center",
     justifyContent:"center",
     marginTop:80,
-    marginBottom:10
+    marginBottom:10,
+    marginRight:35
   },
   
-  SignUpBtn:{
+  SignInBtn:{
     width:"80%",
     backgroundColor:"#fb5b5a",
     borderRadius:15,
@@ -102,6 +111,7 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     marginTop:80,
     marginBottom:10
+  
   },
 
 });
