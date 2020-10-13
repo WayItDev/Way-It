@@ -1,81 +1,68 @@
-import React from 'react';
-import { StyleSheet, View, TextInput, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { Input } from 'react-native-elements';
-import { Button } from 'react-native-elements';
-import { Header } from 'react-native-elements'; 
+import React, { useState } from 'react'
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  Text,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+} from 'react-native'
+import { StatusBar } from 'expo-status-bar'
+import { Button } from 'react-native-elements'
+import Header from '../components/authentication/header'
 
+const SignUpScreen = () => {
+  initialState = {
+    email: '',
+    password: '',
+  }
+  const [email, setEmail] = useState(initialState)
+  const [password, setPassword] = useState(initialState)
 
-export default class SignInScreen extends React.Component {
-  render(){
-
-  
-    return (
-      
-      <View style= {styles.inputView}>
-
-      <Header
-        centerComponent={{ text: 'Way-It', style: { color: '#373a40', fontSize: 24 } }}
-        containerStyle={{
-          backgroundColor: '#665eff',
-          justifyContent: 'space-around',
-          marginTop: '-40%',
-          marginBottom: '50%'
-        }}
-      /> 
-           <Input
-            placeholder='Email'
-            leftIcon={
-              <Icon
-                name='android'
-                size={21}
-                color='black'
-              />
-            }
-          />
-
-          <Input
-            placeholder='Username'
-            leftIcon={
-              <Icon
-                name='user'
-                size={21}
-                color='black'
-              />
-            }
-          />
-
-          <Input placeholder="Password" secureTextEntry={true}
-            leftIcon={
-              <Icon 
-              name='key'
-              size= {21}
-              color= 'black'
-              />
-                    }
-            />
-
-              <Button 
-                title="Continue"
-                color= "#665eff"
-                
-              />
-                        
-            </View>
-          );
-        }
-        }
+  return (
+    <KeyboardAvoidingView style={styles.container}>
+      <Header />
+      <View style={styles.inputView}>
+        <TextInput style={styles.textInput} placeholder="Name" />
+        <TextInput style={styles.textInput} placeholder="Email" />
+        <TextInput style={styles.textInput} placeholder="Password" />
+        <TextInput style={styles.textInput} placeholder="Confirm Password" />
+        <Button
+          type="solid"
+          raised
+          containerStyle={{ width: '90%' }}
+          title="CONTINUE"
+          buttonStyle={{ borderRadius: 10, backgroundColor: '#665EFF', padding: 15, }}
+        />
+      </View>
+      <StatusBar style="auto" />
+    </KeyboardAvoidingView>
+  )
+}
 
 const styles = StyleSheet.create({
-
- 
-  inputView: {
-    backgroundColor:"#f1f3f4",  
-    flex:1,
-    alignItems: 'center',
-    justifyContent: 'center',  
-    maxHeight: '100%',
-    
+  header: {
+    backgroundColor: 'white',
   },
+  container: {
+    backgroundColor: 'white',
+    flex: 1,
+  },
+  inputView: {
+    flex: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: '65%',
+    backgroundColor: 'white',
+  },
+  textInput: {
+    backgroundColor: 'white',
+    width: '90%',
+    borderRadius: 12,
+    elevation: 1,
+    padding: 8,
+    marginBottom: 30,
+  },
+})
 
-});
+export default SignUpScreen
