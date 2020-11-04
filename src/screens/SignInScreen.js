@@ -1,49 +1,67 @@
-import React from 'react'
-import { StyleSheet, View, TextInput, Text } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import { Input } from 'react-native-elements'
+import React, { useState } from 'react'
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  Text,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+} from 'react-native'
+import { StatusBar } from 'expo-status-bar'
 import { Button } from 'react-native-elements'
-import { Header } from 'react-native-elements'
+import Header from '../components/authentication/header'
 
-export default class SignInScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.inputView}>
-        <Header
-          centerComponent={{
-            text: 'Way-It',
-            style: { color: '#373a40', fontSize: 24 },
-          }}
-          containerStyle={{
-            backgroundColor: '#665eff',
-            justifyContent: 'space-around',
-            marginTop: '-40%',
-            marginBottom: '50%',
-          }}
-        />
-        <Input
-          placeholder="Username"
-          leftIcon={<Icon name="user" size={21} color="black" />}
-        />
-
-        <Input
-          placeholder="Password"
-          secureTextEntry={true}
-          leftIcon={<Icon name="key" size={21} color="black" />}
-        />
-
-        <Button title="Continue" color="#665eff" />
-      </View>
-    )
+const SignUpScreen = () => {
+  initialState = {
+    email: '',
+    password: '',
   }
+  const [email, setEmail] = useState(initialState)
+  const [password, setPassword] = useState(initialState)
+
+  return (
+    <KeyboardAvoidingView style={styles.container}>
+      <Header />
+      <View style={styles.inputView}>
+        <TextInput style={styles.textInput} placeholder="Username" />
+        <TextInput style={styles.textInput} placeholder="Password" />
+      
+        <Button
+          type="solid"
+          raised
+          containerStyle={{ width: '90%' }}
+          title="CONTINUE"
+          buttonStyle={{ borderRadius: 10, backgroundColor: '#665EFF', padding: 15, }}
+        />
+      </View>
+      <StatusBar style="auto" />
+    </KeyboardAvoidingView>
+  )
 }
 
 const styles = StyleSheet.create({
-  inputView: {
-    backgroundColor: '#f1f3f4',
+  header: {
+    backgroundColor: 'white',
+  },
+  container: {
+    backgroundColor: 'white',
     flex: 1,
-    alignItems: 'center',
+  },
+  inputView: {
+    flex: 3,
     justifyContent: 'center',
-    maxHeight: '100%',
+    alignItems: 'center',
+    marginBottom: '65%',
+    backgroundColor: 'white',
+  },
+  textInput: {
+    backgroundColor: 'white',
+    width: '90%',
+    borderRadius: 12,
+    elevation: 1,
+    padding: 8,
+    marginBottom: 30,
   },
 })
+
+export default SignUpScreen
