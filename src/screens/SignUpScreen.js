@@ -7,11 +7,10 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native'
+import {Button} from 'react-native-elements'
 import { StatusBar } from 'expo-status-bar'
-import { Button } from 'react-native-elements'
-import Header from '../components/authentication/header'
 
-const SignUpScreen = () => {
+const SignUpScreen = ({ navigation }) => {
   initialState = {
     email: '',
     password: '',
@@ -21,7 +20,10 @@ const SignUpScreen = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container}>
-      <Header />
+      <View style={styles.header}>
+        <Button title="SIGN IN" onPress={() => navigation.navigate('SignIn')} buttonStyle={{borderRadius: 12, backgroundColor: 'white'}}  titleStyle={{color: "#78849e"}}/>
+        <Button title="SIGN UP" buttonStyle={{borderRadius: 12, backgroundColor: '#665EFF'}}/>
+      </View>
       <View style={styles.inputView}>
         <TextInput style={styles.textInput} placeholder="Name" />
         <TextInput style={styles.textInput} placeholder="Email" />
@@ -47,6 +49,12 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     flex: 1,
+  },
+  header: {
+    padding: 10,
+    flexDirection: 'row',
+    marginTop: 40,
+    justifyContent: 'space-around',
   },
   inputView: {
     flex: 3,
