@@ -5,11 +5,13 @@ import SignInScreen from './src/screens/SignInScreen'
 import SignUpScreen from './src/screens/SignUpScreen'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Input } from 'react-native-elements'
+import PlacesNavigator from './src/navi/PlacesNavigator'; 
 
-export default class App extends React.Component {
-  render() {
-    return <SignUpScreen />
+
+export default function App () {
+  
+    return <PlacesNavigator /> ; 
   }
-}
+
 
 const styles = StyleSheet.create({})
