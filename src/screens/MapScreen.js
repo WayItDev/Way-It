@@ -3,11 +3,13 @@ import MapView from 'react-native-maps'
 import { View, StyleSheet, Dimensions } from 'react-native'
 
 // Initializing of the MapScreen
-const MapScreen = () => (
-  <View style={styles.container}>
-    <MapView style={styles.mapStyle} />
-  </View>
-)
+const MapScreen = props => {
+  return (
+    <View style={styles.container}>
+        <MapView style={styles.mapStyle} />
+    </View>
+  ); 
+}; 
 
 const styles = StyleSheet.create({
   container: {

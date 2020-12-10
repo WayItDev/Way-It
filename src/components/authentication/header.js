@@ -17,7 +17,7 @@ const HeaderButtons = () => {
     container: {
         padding: 10,
         flexDirection: 'row',
-        marginTop: 40,
+        marginTop: 30,
         justifyContent: 'space-around',
     },
   })
